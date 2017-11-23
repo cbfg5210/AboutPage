@@ -33,7 +33,6 @@ public class AboutPageView extends android.support.v4.widget.NestedScrollView im
     private String appDescDetail;
     private CharSequence[] versionNoteDetail;
     private String emailAddress;
-    private String emailSubject;
     private String shareContent;
     private CharSequence[] faqDetail;
 
@@ -61,10 +60,7 @@ public class AboutPageView extends android.support.v4.widget.NestedScrollView im
 
         appDescDetail = ta.getString(R.styleable.AboutPageView_appDescDetail);
         emailAddress = ta.getString(R.styleable.AboutPageView_emailAddress);
-        emailSubject = ta.getString(R.styleable.AboutPageView_emailSubject);
         shareContent = ta.getString(R.styleable.AboutPageView_shareContent);
-//        versionNoteDetail = ta.getString(R.styleable.AboutPageView_versionNoteDetail);
-//        faqDetail = ta.getString(R.styleable.AboutPageView_faqDetail);
         versionNoteDetail = ta.getTextArray(R.styleable.AboutPageView_versionNoteDetail);
         faqDetail = ta.getTextArray(R.styleable.AboutPageView_faqDetail);
 
@@ -137,6 +133,7 @@ public class AboutPageView extends android.support.v4.widget.NestedScrollView im
             return;
         }
         if (viewId == R.id.tvFeedback) {
+            String emailSubject = getContext().getString(R.string.app_name) + "-" + getContext().getString(R.string.feedback);
             sendEMail(getContext(), emailAddress, emailSubject);
             return;
         }
