@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">About</string>
+    <string name="app_desc_label">Introduction</string>
+    <string name="app_version">Version %s</string>
+    <string name="faq">FAQ</string>
+    <string name="feedback">Feedback</string>
+    <string name="share">Share</string>
+    <string name="support_ad">Support&#038;AD</string>
+    <string name="version_note">Version Notes</string>
+    <string name="error_share">Sorry!Failed to invoke sharing function on your device.</string>
+    <string name="error_send_mail">Sorry!Failed to invoke mailing function on your device.</string>
 </resources>

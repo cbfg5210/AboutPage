@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="15dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:drawablePadding="5dp"
+        android:drawableTop="@mipmap/ic_launcher"
+        android:gravity="center_vertical"
+        android:text="@string/app_name"
+        android:textColor="@color/col_b3000000"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/tvAppDesc"
+        style="@style/AboutActionStyle"
+        android:drawableLeft="@drawable/svg_introduction_wrapper"
+        android:text="@string/app_desc_label"/>
+
+    <TextView
+        android:id="@+id/tvAppDescDetail"
+        style="@style/DetailDescStyle"
+        android:text="详细应用介绍asdfsadfsafsdf详细应用介绍asdfsadfsafsdf详细应用介绍asdfsadfsafsdf详细应用介绍asdfsadfsafsdf详细应用介绍asdfsadfsafsdf详细应用介绍asdfsadfsafsdf详细应用介绍asdfsadfsafsdf详细应用介绍asdfsadfsafsdf详细应用介绍asdfsadfsafsdf详细应用介绍asdfsadfsafsdf详细应用介绍asdfsadfsafsdf详细应用介绍asdfsadfsafsdf"/>
+
+    <include layout="@layout/layout_separator"/>
+
+    <TextView
+        android:id="@+id/tvVersion"
+        style="@style/AboutActionStyle"
+        android:layout_marginTop="5dp"
+        android:drawableLeft="@drawable/svg_version_wrapper"
+        android:text="@string/app_version"/>
+
+    <include layout="@layout/layout_separator"/>
+
+    <TextView
+        android:id="@+id/tvVersionNote"
+        style="@style/AboutActionStyle"
+        android:drawableLeft="@drawable/svg_version_wrapper"
+        android:text="@string/version_note"/>
+
+    <TextView
+        android:id="@+id/tvVersionNoteDetail"
+        style="@style/DetailDescStyle"
+        android:text="version note detail"/>
+
+    <include layout="@layout/layout_separator"/>
+
+    <TextView
+        android:id="@+id/tvFaq"
+        style="@style/AboutActionStyle"
+        android:drawableLeft="@drawable/svg_faq_wrapper"
+        android:text="@string/faq"/>
+
+    <TextView
+        android:id="@+id/tvFaqDetail"
+        style="@style/DetailDescStyle"
+        android:text="faq detail"/>
+
+    <include layout="@layout/layout_separator"/>
+
+    <TextView
+        android:id="@+id/tvFeedback"
+        style="@style/AboutActionStyle"
+        android:drawableLeft="@drawable/svg_feedback_wrapper"
+        android:text="@string/feedback"/>
+
+    <include layout="@layout/layout_separator"/>
+
+    <TextView
+        android:id="@+id/tvShare"
+        style="@style/AboutActionStyle"
+        android:drawableLeft="@drawable/svg_share_wrapper"
+        android:text="@string/share"/>
+
+    <include layout="@layout/layout_separator"/>
+
+    <TextView
+        android:id="@+id/tvSupport"
+        style="@style/AboutActionStyle"
+        android:drawableLeft="@drawable/svg_support_wrapper"
+        android:text="@string/support_ad"/>
+</LinearLayout>

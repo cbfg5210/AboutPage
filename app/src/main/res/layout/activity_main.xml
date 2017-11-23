@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<com.ue.aboutpage.AboutPageView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/apvAboutPage"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ue.aboutpagedemo.MainActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-</android.support.constraint.ConstraintLayout>
+    app:appDescDetail="app描述app描述app描述app描述app描述app描述app描述app描述app描述app描述app描述app描述"
+    app:emailAddress="12342134243@qq.com"
+    app:emailSubject="邮件subject邮件subject邮件subject邮件subject邮件subject邮件subject邮件subject邮件subject"
+    app:faqDetail="faq详情faq详情faq详情faq详情faq详情faq详情faq详情faq详情faq详情faq详情faq详情faq详情"
+    app:shareContent="分享content分享content分享content分享content分享content分享content分享content分享content"
+    app:versionNoteDetail="app版本日志app版本日志app版本日志app版本日志app版本日志app版本日志app版本日志app版本日志app版本日志app版本日志app版本日志app版本日志"/>
