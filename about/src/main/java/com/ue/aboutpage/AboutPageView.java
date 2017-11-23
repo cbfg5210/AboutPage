@@ -61,6 +61,19 @@ public class AboutPageView extends android.support.v4.widget.NestedScrollView im
         }
     }
 
+    public void setShareContent(String shareContent) {
+        this.shareContent = shareContent;
+    }
+
+    public void setAppDescDetail(String appDescDetail) {
+        this.appDescDetail = appDescDetail;
+        tvAppDescDetail.setText(appDescDetail);
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
+    }
+
     public AboutPageView(@NonNull Context context) {
         this(context, null, 0);
     }
