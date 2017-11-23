@@ -15,7 +15,7 @@
         android:drawableTop="@mipmap/ic_launcher"
         android:gravity="center_vertical"
         android:text="@string/app_name"
-        android:textColor="@color/col_b3000000"
+        android:textColor="#b3000000"
         android:textSize="18sp"/>
 
     <TextView
@@ -43,7 +43,7 @@
     <TextView
         android:id="@+id/tvVersionNote"
         style="@style/AboutActionStyle"
-        android:drawableLeft="@drawable/svg_version_wrapper"
+        android:drawableLeft="@drawable/svg_version_note_wrapper"
         android:text="@string/version_note"/>
 
     <TextView
