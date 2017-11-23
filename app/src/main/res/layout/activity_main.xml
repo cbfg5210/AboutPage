@@ -7,6 +7,4 @@
     android:layout_height="match_parent"
     app:appDescDetail="app描述app描述app描述app描述app描述app描述app描述app描述app描述app描述app描述app描述"
     app:emailAddress="12342134243@qq.com"
-    app:faqDetail="@array/faqItems"
-    app:shareContent="分享content分享content分享content分享content分享content分享content分享content分享content"
-    app:versionNoteDetail="@array/versionNoteItems"/>
+    app:shareContent="分享content分享content分享content分享content分享content分享content分享content分享content"/>

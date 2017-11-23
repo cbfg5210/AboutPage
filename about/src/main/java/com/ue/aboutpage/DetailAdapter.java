@@ -7,15 +7,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.List;
+
 /**
  * Created by hawk on 2017/11/23.
  */
 
 public class DetailAdapter extends RecyclerView.Adapter<DetailAdapter.ViewHolder> {
-    private CharSequence[] items;
+    private List<DetailItem> items;
 
-    public DetailAdapter(CharSequence[] items) {
+    public DetailAdapter(List<DetailItem> items) {
         this.items = items;
+    }
+
+    public void setItems(List<DetailItem> items) {
+        this.items = items;
+        notifyDataSetChanged();
     }
 
     @Override
@@ -27,20 +34,24 @@ public class DetailAdapter extends RecyclerView.Adapter<DetailAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.tvDetailItem.setText(items[position].toString());
+        DetailItem item = items.get(position);
+        holder.tvDetItemTitle.setText(item.title);
+        holder.tvDetItemContent.setText(item.content);
     }
 
     @Override
     public int getItemCount() {
-        return items == null ? 0 : items.length;
+        return items == null ? 0 : items.size();
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView tvDetailItem;
+        private TextView tvDetItemTitle;
+        private TextView tvDetItemContent;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            tvDetailItem = itemView.findViewById(R.id.tvDetailItem);
+            tvDetItemTitle = itemView.findViewById(R.id.tvDetItemTitle);
+            tvDetItemContent = itemView.findViewById(R.id.tvDetItemContent);
         }
     }
 }

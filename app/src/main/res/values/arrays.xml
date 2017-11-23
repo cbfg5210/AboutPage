@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="faqItems">
-        <item>faq详情项 faq详情项 faq详情项</item>
-        <item>faq详情项 faq详情项 faq详情项</item>
-        <item>faq详情项 faq详情项 faq详情项</item>
-        <item>faq详情项 faq详情项 faq详情项</item>
-        <item>faq详情项 faq详情项 faq详情项</item>
+    <string-array name="faqTitles">
+        <item>@string/faq_title1</item>
+        <item>@string/faq_title2</item>
+        <item>@string/faq_title3</item>
     </string-array>
-    <string-array name="versionNoteItems">
-        <item>version日志项</item>
-        <item>version日志项</item>
-        <item>version日志项</item>
-        <item>version日志项</item>
-        <item>version日志项</item>
-        <item>version日志项</item>
+    <string-array name="faqItems">
+        <item>@string/faq_item1</item>
+        <item>@string/faq_item2</item>
+        <item>@string/faq_item3</item>
     </string-array>
 </resources>

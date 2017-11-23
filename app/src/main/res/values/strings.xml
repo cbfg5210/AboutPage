@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">AboutPage</string>
+
+    <string name="faq_title1">
+        1、Unable to install apps or click buttons.
+    </string>
+    <string name="faq_item1">
+        This is a restriction for floating window function on Android for security considerations.
+        In this case,you should switch off the filter temporarily through the switch on notification bar
+        or home page,and when completing the operation,you can switch on the filter.
+    </string>
+
+    <string name="faq_title2">
+        2、Permissions
+    </string>
+    <string name="faq_item2">
+        There are some issues on system permissions because some manufacturers make deep customization of the native Android system.
+        \n1、Cannot detect whether a permission has been granted or not such as whitelist permission.
+        \n2、Cannot jump to the settings page to grant permissions.In this case, please enter the settings page and grant permissions manually.
+        \n3、Permission name is not the same on mobiles made of different manufacturers,for example whitelist permission,
+        is called \'Protect Apps\' on Huawei EMUI while \'Manage apps\' battery usage\' on Xiaomi MIUI.
+    </string>
+
+    <string name="faq_title3">
+        3、Feedback
+    </string>
+    <string name="faq_item3">
+        You can send email to us through the feedback function or the third party mailbox if you find any other problems,
+        and we will deal with it as soon as possible. Thank you for your support!</string>
 </resources>

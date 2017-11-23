@@ -14,6 +14,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 /**
  * Created by hawk on 2017/11/23.
  */
@@ -31,15 +33,32 @@ public class AboutPageView extends android.support.v4.widget.NestedScrollView im
     private TextView tvSupport;
 
     private String appDescDetail;
-    private CharSequence[] versionNoteDetail;
     private String emailAddress;
     private String shareContent;
-    private CharSequence[] faqDetail;
+
+    private List<DetailItem> faqItems;
+    private List<DetailItem> verNoteItems;
 
     private OnAboutItemClickListener mAboutItemClickListener;
 
     public void setAboutItemClickListener(OnAboutItemClickListener aboutItemClickListener) {
         mAboutItemClickListener = aboutItemClickListener;
+    }
+
+    public void setFaqItems(List<DetailItem> faqItems) {
+        this.faqItems = faqItems;
+        if (faqItems != null) {
+            DetailAdapter adapter = (DetailAdapter) rvFaqDetail.getAdapter();
+            adapter.setItems(faqItems);
+        }
+    }
+
+    public void setVerNoteItems(List<DetailItem> verNoteItems) {
+        this.verNoteItems = verNoteItems;
+        if (verNoteItems != null) {
+            DetailAdapter adapter = (DetailAdapter) rvVersionNoteDetail.getAdapter();
+            adapter.setItems(verNoteItems);
+        }
     }
 
     public AboutPageView(@NonNull Context context) {
@@ -61,8 +80,6 @@ public class AboutPageView extends android.support.v4.widget.NestedScrollView im
         appDescDetail = ta.getString(R.styleable.AboutPageView_appDescDetail);
         emailAddress = ta.getString(R.styleable.AboutPageView_emailAddress);
         shareContent = ta.getString(R.styleable.AboutPageView_shareContent);
-        versionNoteDetail = ta.getTextArray(R.styleable.AboutPageView_versionNoteDetail);
-        faqDetail = ta.getTextArray(R.styleable.AboutPageView_faqDetail);
 
         ta.recycle();
 
@@ -92,10 +109,10 @@ public class AboutPageView extends android.support.v4.widget.NestedScrollView im
             e.printStackTrace();
         }
 
-        DetailAdapter versionNoteAdapter = new DetailAdapter(versionNoteDetail);
+        DetailAdapter versionNoteAdapter = new DetailAdapter(verNoteItems);
         rvVersionNoteDetail.setAdapter(versionNoteAdapter);
 
-        DetailAdapter faqAdapter = new DetailAdapter(faqDetail);
+        DetailAdapter faqAdapter = new DetailAdapter(faqItems);
         rvFaqDetail.setAdapter(faqAdapter);
 
         tvAppDescDetail.setText(appDescDetail);
