@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources >
+    <string name="app_name">About</string>
+    <string name="app_desc_label">App परिचय</string>
+    <string name="app_version">संस्करण %s</string>
+    <string name="faq">FAQ</string>
+    <string name="feedback">प्रतिक्रिया</string>
+    <string name="share">शेयर</string>
+    <string name="support_ad">समर्थन&#038;विज्ञापन</string>
+    <string name="version_note">संस्करण लॉग</string>
+    <string name="error_share">क्षमा करें, इस उपकरण की साझाकरण सुविधा को नहीं कहा जा सकता।</string>
+    <string name="error_send_mail">क्षमा करें, इस डिवाइस की ईमेल संपादन सुविधा को नहीं कहा जा सकता।</string>
+</resources>

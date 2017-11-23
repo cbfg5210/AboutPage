@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">About</string>
+    <string name="app_desc_label">App介紹</string>
+    <string name="app_version" formatted="false">版本 %s</string>
+    <string name="faq">FAQ</string>
+    <string name="feedback">反饋</string>
+    <string name="share">分享</string>
+    <string name="support_ad">支持&#038;廣告</string>
+    <string name="version_note">版本日誌</string>
+    <string name="error_share">抱歉!無法調用本設備的分享功能.</string>
+    <string name="error_send_mail">抱歉!無法調用本設備的郵件編輯功能.</string>
+</resources>

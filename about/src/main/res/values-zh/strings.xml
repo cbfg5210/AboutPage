@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">About</string>
-    <string name="app_desc_label">应用介绍</string>
+    <string name="app_desc_label">App介绍</string>
     <string name="app_version">版本 %s</string>
     <string name="faq">FAQ</string>
     <string name="feedback">反馈</string>
