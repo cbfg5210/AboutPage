@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -26,8 +25,7 @@
 
     <TextView
         android:id="@+id/tvAppDescDetail"
-        style="@style/DetailDescStyle"
-        android:text="详细应用介绍asdfsadfsafsdf详细应用介绍asdfsadfsafsdf详细应用介绍asdfsadfsafsdf详细应用介绍asdfsadfsafsdf详细应用介绍asdfsadfsafsdf详细应用介绍asdfsadfsafsdf详细应用介绍asdfsadfsafsdf详细应用介绍asdfsadfsafsdf详细应用介绍asdfsadfsafsdf详细应用介绍asdfsadfsafsdf详细应用介绍asdfsadfsafsdf详细应用介绍asdfsadfsafsdf"/>
+        style="@style/DetailDescStyle"/>
 
     <include layout="@layout/layout_separator"/>
 
@@ -48,8 +46,7 @@
 
     <TextView
         android:id="@+id/tvVersionNoteDetail"
-        style="@style/DetailDescStyle"
-        android:text="version note detail"/>
+        style="@style/DetailDescStyle"/>
 
     <include layout="@layout/layout_separator"/>
 
@@ -61,8 +58,7 @@
 
     <TextView
         android:id="@+id/tvFaqDetail"
-        style="@style/DetailDescStyle"
-        android:text="faq detail"/>
+        style="@style/DetailDescStyle"/>
 
     <include layout="@layout/layout_separator"/>
 
