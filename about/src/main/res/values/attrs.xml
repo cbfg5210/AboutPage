@@ -2,10 +2,10 @@
 <resources>
     <declare-styleable name="AboutPageView">
         <attr name="appDescDetail" format="string"/>
-        <attr name="versionNoteDetail" format="string"/>
+        <attr name="versionNoteDetail" format="reference"/>
         <attr name="emailAddress" format="string"/>
         <attr name="emailSubject" format="string"/>
         <attr name="shareContent" format="string"/>
-        <attr name="faqDetail" format="string"/>
+        <attr name="faqDetail" format="reference"/>
     </declare-styleable>
 </resources>

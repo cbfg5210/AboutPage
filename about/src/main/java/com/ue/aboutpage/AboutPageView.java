@@ -8,6 +8,7 @@ import android.content.res.TypedArray;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.TextView;
@@ -22,19 +23,19 @@ public class AboutPageView extends android.support.v4.widget.NestedScrollView im
     private TextView tvAppDescDetail;
     private TextView tvVersion;
     private TextView tvVersionNote;
-    private TextView tvVersionNoteDetail;
+    private RecyclerView rvVersionNoteDetail;
     private TextView tvFaq;
-    private TextView tvFaqDetail;
+    private RecyclerView rvFaqDetail;
     private TextView tvFeedback;
     private TextView tvShare;
     private TextView tvSupport;
 
     private String appDescDetail;
-    private String versionNoteDetail;
+    private CharSequence[] versionNoteDetail;
     private String emailAddress;
     private String emailSubject;
     private String shareContent;
-    private String faqDetail;
+    private CharSequence[] faqDetail;
 
     private OnAboutItemClickListener mAboutItemClickListener;
 
@@ -59,11 +60,13 @@ public class AboutPageView extends android.support.v4.widget.NestedScrollView im
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.AboutPageView);
 
         appDescDetail = ta.getString(R.styleable.AboutPageView_appDescDetail);
-        versionNoteDetail = ta.getString(R.styleable.AboutPageView_versionNoteDetail);
         emailAddress = ta.getString(R.styleable.AboutPageView_emailAddress);
         emailSubject = ta.getString(R.styleable.AboutPageView_emailSubject);
         shareContent = ta.getString(R.styleable.AboutPageView_shareContent);
-        faqDetail = ta.getString(R.styleable.AboutPageView_faqDetail);
+//        versionNoteDetail = ta.getString(R.styleable.AboutPageView_versionNoteDetail);
+//        faqDetail = ta.getString(R.styleable.AboutPageView_faqDetail);
+        versionNoteDetail = ta.getTextArray(R.styleable.AboutPageView_versionNoteDetail);
+        faqDetail = ta.getTextArray(R.styleable.AboutPageView_faqDetail);
 
         ta.recycle();
 
@@ -78,9 +81,9 @@ public class AboutPageView extends android.support.v4.widget.NestedScrollView im
         tvAppDescDetail = findViewById(R.id.tvAppDescDetail);
         tvVersion = findViewById(R.id.tvVersion);
         tvVersionNote = findViewById(R.id.tvVersionNote);
-        tvVersionNoteDetail = findViewById(R.id.tvVersionNoteDetail);
+        rvVersionNoteDetail = findViewById(R.id.rvVersionNoteDetail);
         tvFaq = findViewById(R.id.tvFaq);
-        tvFaqDetail = findViewById(R.id.tvFaqDetail);
+        rvFaqDetail = findViewById(R.id.rvFaqDetail);
         tvFeedback = findViewById(R.id.tvFeedback);
         tvShare = findViewById(R.id.tvShare);
         tvSupport = findViewById(R.id.tvSupport);
@@ -93,10 +96,13 @@ public class AboutPageView extends android.support.v4.widget.NestedScrollView im
             e.printStackTrace();
         }
 
-        tvAppDescDetail.setText(appDescDetail);
-        tvVersionNoteDetail.setText(versionNoteDetail);
-        tvFaqDetail.setText(faqDetail);
+        DetailAdapter versionNoteAdapter = new DetailAdapter(versionNoteDetail);
+        rvVersionNoteDetail.setAdapter(versionNoteAdapter);
 
+        DetailAdapter faqAdapter = new DetailAdapter(faqDetail);
+        rvFaqDetail.setAdapter(faqAdapter);
+
+        tvAppDescDetail.setText(appDescDetail);
         String feedbackTxt = getContext().getString(R.string.feedback) + "(" + emailAddress + ")";
         tvFeedback.setText(feedbackTxt);
 
@@ -123,11 +129,11 @@ public class AboutPageView extends android.support.v4.widget.NestedScrollView im
             return;
         }
         if (viewId == R.id.tvVersionNote) {
-            toggleVisibility(tvVersionNoteDetail);
+            toggleVisibility(rvVersionNoteDetail);
             return;
         }
         if (viewId == R.id.tvFaq) {
-            toggleVisibility(tvFaqDetail);
+            toggleVisibility(rvFaqDetail);
             return;
         }
         if (viewId == R.id.tvFeedback) {
@@ -151,7 +157,7 @@ public class AboutPageView extends android.support.v4.widget.NestedScrollView im
     }
 
     public void toggleFaqDetail() {
-        toggleVisibility(tvFaqDetail);
+        toggleVisibility(rvFaqDetail);
     }
 
     private void toggleVisibility(View view) {

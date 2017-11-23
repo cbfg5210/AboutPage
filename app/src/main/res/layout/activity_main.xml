@@ -8,6 +8,6 @@
     app:appDescDetail="app描述app描述app描述app描述app描述app描述app描述app描述app描述app描述app描述app描述"
     app:emailAddress="12342134243@qq.com"
     app:emailSubject="邮件subject邮件subject邮件subject邮件subject邮件subject邮件subject邮件subject邮件subject"
-    app:faqDetail="faq详情faq详情faq详情faq详情faq详情faq详情faq详情faq详情faq详情faq详情faq详情faq详情"
+    app:faqDetail="@array/faqItems"
     app:shareContent="分享content分享content分享content分享content分享content分享content分享content分享content"
-    app:versionNoteDetail="app版本日志app版本日志app版本日志app版本日志app版本日志app版本日志app版本日志app版本日志app版本日志app版本日志app版本日志app版本日志"/>
+    app:versionNoteDetail="@array/versionNoteItems"/>

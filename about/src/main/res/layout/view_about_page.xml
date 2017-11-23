@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -12,7 +13,7 @@
         android:drawablePadding="5dp"
         android:drawableTop="@mipmap/ic_launcher"
         android:gravity="center_vertical"
-        android:paddingTop="@dimen/about_item_padding"
+        android:paddingTop="@dimen/aboutItemPadding"
         android:text="@string/app_name"
         android:textColor="@color/col_b3000000"
         android:textSize="18sp"/>
@@ -44,9 +45,15 @@
         android:drawableLeft="@drawable/svg_version_note_wrapper"
         android:text="@string/version_note"/>
 
-    <TextView
-        android:id="@+id/tvVersionNoteDetail"
-        style="@style/DetailDescStyle"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvVersionNoteDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="false"
+        android:overScrollMode="never"
+        android:paddingBottom="@dimen/aboutItemPadding"
+        android:visibility="gone"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"/>
 
     <include layout="@layout/layout_separator"/>
 
@@ -56,9 +63,15 @@
         android:drawableLeft="@drawable/svg_faq_wrapper"
         android:text="@string/faq"/>
 
-    <TextView
-        android:id="@+id/tvFaqDetail"
-        style="@style/DetailDescStyle"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvFaqDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="false"
+        android:overScrollMode="never"
+        android:paddingBottom="@dimen/aboutItemPadding"
+        android:visibility="gone"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"/>
 
     <include layout="@layout/layout_separator"/>
 
