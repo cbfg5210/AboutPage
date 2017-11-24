@@ -28,7 +28,7 @@
         android:id="@+id/tvAppDescDetail"
         style="@style/DetailDescStyle"/>
 
-    <include layout="@layout/layout_separator"/>
+    <include layout="@layout/layout_about_separator"/>
 
     <TextView
         android:id="@+id/tvVersion"
@@ -37,7 +37,7 @@
         android:drawableLeft="@drawable/svg_version_wrapper"
         android:text="@string/app_version"/>
 
-    <include layout="@layout/layout_separator"/>
+    <include layout="@layout/layout_about_separator"/>
 
     <TextView
         android:id="@+id/tvVersionNote"
@@ -55,7 +55,7 @@
         android:visibility="gone"
         app:layoutManager="android.support.v7.widget.LinearLayoutManager"/>
 
-    <include layout="@layout/layout_separator"/>
+    <include layout="@layout/layout_about_separator"/>
 
     <TextView
         android:id="@+id/tvFaq"
@@ -73,7 +73,7 @@
         android:visibility="gone"
         app:layoutManager="android.support.v7.widget.LinearLayoutManager"/>
 
-    <include layout="@layout/layout_separator"/>
+    <include layout="@layout/layout_about_separator"/>
 
     <TextView
         android:id="@+id/tvFeedback"
@@ -81,7 +81,7 @@
         android:drawableLeft="@drawable/svg_feedback_wrapper"
         android:text="@string/feedback"/>
 
-    <include layout="@layout/layout_separator"/>
+    <include layout="@layout/layout_about_separator"/>
 
     <TextView
         android:id="@+id/tvShare"
@@ -89,7 +89,7 @@
         android:drawableLeft="@drawable/svg_share_wrapper"
         android:text="@string/share"/>
 
-    <include layout="@layout/layout_separator"/>
+    <include layout="@layout/layout_about_separator"/>
 
     <TextView
         android:id="@+id/tvSupport"

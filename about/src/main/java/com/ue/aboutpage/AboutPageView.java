@@ -18,6 +18,7 @@ import java.util.List;
 
 /**
  * Created by hawk on 2017/11/23.
+ *
  */
 
 public class AboutPageView extends android.support.v4.widget.NestedScrollView implements View.OnClickListener {

@@ -5,11 +5,8 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:drawablePadding">5dp</item>
-        <item name="android:paddingLeft">@dimen/aboutItemPadding</item>
-        <item name="android:paddingRight">@dimen/aboutItemPadding</item>
+        <item name="android:padding">@dimen/aboutItemPadding</item>
         <item name="android:gravity">center_vertical</item>
-        <item name="android:paddingTop">15dp</item>
-        <item name="android:paddingBottom">15dp</item>
         <item name="android:textColor">@color/col_b3000000</item>
         <item name="android:textSize">15sp</item>
         <item name="android:background">?attr/selectableItemBackground</item>

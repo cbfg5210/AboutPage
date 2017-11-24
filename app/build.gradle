@@ -20,6 +20,11 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    /* 强制依赖某一版本
+    configurations.all{
+        resolutionStrategy.force 'org.hamcrest:hamcrest-core:1.1'
+    }*/
 }
 
 repositories {
@@ -35,8 +40,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    //    implementation 'com.github.cbfg5210:AboutPage:v1.2'
-    //    compile(name: 'about-release', ext: 'aar')
     implementation "com.android.support:recyclerview-v7:${androidSupportLibVersion}"
+
+    /*移除重复的库
+    implementation(project(':about')) {
+        exclude group: 'com.android.support', module: 'recyclerview-v7'
+    }*/
     implementation project(':about')
 }
