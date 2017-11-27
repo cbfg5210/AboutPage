@@ -8,5 +8,5 @@
     app:appDescDetail="app描述app描述app描述app描述app描述app描述app描述app描述app描述app描述app描述app描述"
     app:bdStoreUrl="https://mobile.baidu.com/item?type=soft&#038;docid=22658864"
     app:emailAddress="12342134243@qq.com"
-    app:miStoreUrl="http://app.mi.com/details?id=com.cbfg.blfilter&#038;ref=search"
+    app:miStoreUrl="http://app.mi.com/details?id=com.cbfg.blfilter"
     app:shareContent="分享content分享content分享content分享content分享content分享content分享content分享content"/>

@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -58,7 +59,19 @@ public class PraiseDialog extends DialogFragment {
         View.OnClickListener clickListener = v -> {
             int viewId = v.getId();
             dismissAllowingStateLoss();
-            openBrowser(getContext(), (viewId == R.id.tvPraiseMi ? miStoreUrl : bdStoreUrl));
+            if (viewId == R.id.tvPraiseBd) {
+                openBrowser(getContext(), bdStoreUrl);
+                return;
+            }
+            if (viewId == R.id.tvPraiseMi) {
+                if (Build.MANUFACTURER.toLowerCase().contains("xiaomi")) {
+                    //小米设备直接打开手机应用商店
+                    goToAppStore(getContext(), miStoreUrl);
+                    return;
+                }
+                openBrowser(getContext(), miStoreUrl);
+                return;
+            }
         };
 
         if (TextUtils.isEmpty(miStoreUrl)) {
@@ -78,6 +91,17 @@ public class PraiseDialog extends DialogFragment {
         return new AlertDialog.Builder(getContext())
                 .setView(contentView)
                 .create();
+    }
+
+    private void goToAppStore(Context context, String url) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setData(Uri.parse("market://details?id=" + context.getPackageName()));
+        try {
+            getContext().startActivity(intent);
+        } catch (Exception exp) {
+            openBrowser(context, url);
+        }
     }
 
     private void openBrowser(Context context, String url) {
