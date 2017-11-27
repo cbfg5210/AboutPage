@@ -84,6 +84,14 @@
     <include layout="@layout/layout_about_separator"/>
 
     <TextView
+        android:id="@+id/tvPraise"
+        style="@style/AboutActionStyle"
+        android:drawableLeft="@drawable/svg_support_wrapper"
+        android:text="@string/praise"/>
+
+    <include layout="@layout/layout_about_separator"/>
+
+    <TextView
         android:id="@+id/tvShare"
         style="@style/AboutActionStyle"
         android:drawableLeft="@drawable/svg_share_wrapper"

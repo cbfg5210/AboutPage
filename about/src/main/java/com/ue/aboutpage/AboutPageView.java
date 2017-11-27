@@ -8,7 +8,9 @@ import android.content.res.TypedArray;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.TextView;
@@ -18,24 +20,21 @@ import java.util.List;
 
 /**
  * Created by hawk on 2017/11/23.
- *
  */
 
 public class AboutPageView extends android.support.v4.widget.NestedScrollView implements View.OnClickListener {
-    private TextView tvAppDesc;
     private TextView tvAppDescDetail;
     private TextView tvVersion;
-    private TextView tvVersionNote;
     private RecyclerView rvVersionNoteDetail;
     private TextView tvFaq;
     private RecyclerView rvFaqDetail;
     private TextView tvFeedback;
-    private TextView tvShare;
-    private TextView tvSupport;
 
     private String appDescDetail;
     private String emailAddress;
     private String shareContent;
+    private String miStoreUrl;
+    private String bdStoreUrl;
 
     private List<DetailItem> faqItems;
     private List<DetailItem> verNoteItems;
@@ -94,6 +93,8 @@ public class AboutPageView extends android.support.v4.widget.NestedScrollView im
         appDescDetail = ta.getString(R.styleable.AboutPageView_appDescDetail);
         emailAddress = ta.getString(R.styleable.AboutPageView_emailAddress);
         shareContent = ta.getString(R.styleable.AboutPageView_shareContent);
+        miStoreUrl = ta.getString(R.styleable.AboutPageView_miStoreUrl);
+        bdStoreUrl = ta.getString(R.styleable.AboutPageView_bdStoreUrl);
 
         ta.recycle();
 
@@ -104,16 +105,19 @@ public class AboutPageView extends android.support.v4.widget.NestedScrollView im
     protected void onFinishInflate() {
         super.onFinishInflate();
 
-        tvAppDesc = findViewById(R.id.tvAppDesc);
         tvAppDescDetail = findViewById(R.id.tvAppDescDetail);
         tvVersion = findViewById(R.id.tvVersion);
-        tvVersionNote = findViewById(R.id.tvVersionNote);
         rvVersionNoteDetail = findViewById(R.id.rvVersionNoteDetail);
         tvFaq = findViewById(R.id.tvFaq);
         rvFaqDetail = findViewById(R.id.rvFaqDetail);
         tvFeedback = findViewById(R.id.tvFeedback);
-        tvShare = findViewById(R.id.tvShare);
-        tvSupport = findViewById(R.id.tvSupport);
+
+        View tvPraise = findViewById(R.id.tvPraise);
+        if (!TextUtils.isEmpty(miStoreUrl) || !TextUtils.isEmpty(bdStoreUrl)) {
+            tvPraise.setOnClickListener(this);
+        } else {
+            tvPraise.setVisibility(View.GONE);
+        }
 
         try {
             PackageManager packageManager = getContext().getPackageManager();
@@ -133,13 +137,13 @@ public class AboutPageView extends android.support.v4.widget.NestedScrollView im
         String feedbackTxt = getContext().getString(R.string.feedback) + "(" + emailAddress + ")";
         tvFeedback.setText(feedbackTxt);
 
-        tvAppDesc.setOnClickListener(this);
         tvVersion.setOnClickListener(this);
-        tvVersionNote.setOnClickListener(this);
         tvFaq.setOnClickListener(this);
         tvFeedback.setOnClickListener(this);
-        tvShare.setOnClickListener(this);
-        tvSupport.setOnClickListener(this);
+        findViewById(R.id.tvAppDesc).setOnClickListener(this);
+        findViewById(R.id.tvVersionNote).setOnClickListener(this);
+        findViewById(R.id.tvShare).setOnClickListener(this);
+        findViewById(R.id.tvSupport).setOnClickListener(this);
     }
 
     @Override
@@ -166,6 +170,16 @@ public class AboutPageView extends android.support.v4.widget.NestedScrollView im
         if (viewId == R.id.tvFeedback) {
             String emailSubject = getContext().getString(R.string.app_name) + "-" + getContext().getString(R.string.feedback);
             sendEMail(getContext(), emailAddress, emailSubject);
+            return;
+        }
+        if (viewId == R.id.tvPraise) {
+            Context context = getContext();
+            if (!(context instanceof FragmentActivity)) {
+                return;
+            }
+            FragmentActivity activity = (FragmentActivity) context;
+            PraiseDialog.newInstance(miStoreUrl, bdStoreUrl)
+                    .show(activity.getSupportFragmentManager(), "praise");
             return;
         }
         if (viewId == R.id.tvShare) {

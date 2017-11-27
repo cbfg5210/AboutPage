@@ -4,5 +4,7 @@
         <attr name="appDescDetail" format="string"/>
         <attr name="emailAddress" format="string"/>
         <attr name="shareContent" format="string"/>
+        <attr name="miStoreUrl" format="string"/>
+        <attr name="bdStoreUrl" format="string"/>
     </declare-styleable>
 </resources>

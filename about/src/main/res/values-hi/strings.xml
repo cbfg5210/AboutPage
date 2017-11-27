@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources >
-    <string name="app_name">About</string>
-    <string name="app_desc_label">App परिचय</string>
+    <string name="app_desc_label">एप्लिकेशन परिचय</string>
     <string name="app_version">संस्करण %s</string>
     <string name="faq">FAQ</string>
     <string name="feedback">प्रतिक्रिया</string>
@@ -10,4 +9,9 @@
     <string name="version_note">संस्करण लॉग</string>
     <string name="error_share">क्षमा करें, इस उपकरण की साझाकरण सुविधा को नहीं कहा जा सकता।</string>
     <string name="error_send_mail">क्षमा करें, इस डिवाइस की ईमेल संपादन सुविधा को नहीं कहा जा सकता।</string>
+    <string name="praise">प्रशंसा</string>
+    <string name="choose_channel">ऐप स्टोर चुनें:</string>
+    <string name="mi_store">XiaoMi ऐप स्टोर</string>
+    <string name="bd_store">बाईडु ऐप स्टोर</string>
+    <string name="error_open_browser">क्षमा करें! अपने डिवाइस पर ब्राउज़र खोलने में विफल.</string>
 </resources>

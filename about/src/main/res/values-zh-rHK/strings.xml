@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">About</string>
     <string name="app_desc_label">App介紹</string>
     <string name="app_version" formatted="false">版本 %s</string>
     <string name="faq">FAQ</string>
@@ -10,4 +9,9 @@
     <string name="version_note">版本日誌</string>
     <string name="error_share">抱歉!無法調用本設備的分享功能.</string>
     <string name="error_send_mail">抱歉!無法調用本設備的郵件編輯功能.</string>
+    <string name="praise">給個好評</string>
+    <string name="choose_channel">請選擇好評目的地:</string>
+    <string name="mi_store">小米應用商店</string>
+    <string name="bd_store">百度應用商店</string>
+    <string name="error_open_browser">抱歉，無法調用到本設備的瀏覽器打開頁面!</string>
 </resources>

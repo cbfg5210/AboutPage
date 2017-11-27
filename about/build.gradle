@@ -25,6 +25,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -33,14 +37,13 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     /*
-    provided方式不能生成aar;但是放到JitPack可用,这样避免引入同一库多个版本,
-    通过gradle可能也可以移除重复，但是暂未知道怎么移除
+        provided方式不能生成aar;但是放到JitPack可用,这样避免引入同一库多个版本,
+        通过gradle可能也可以移除重复，但是暂未知道怎么移除
 
-    在其它项目使用生成的aar时并没有发现依赖库的不同版本，这样的话就不用provided了
+        在其它项目使用生成的aar时并没有发现依赖库的不同版本，这样的话就不用provided了
 
-    provided "com.android.support:appcompat-v7:26.0.1"
-    provided "com.android.support:recyclerview-v7:26.0.1"*/
-
+        provided "com.android.support:appcompat-v7:26.0.1"
+        provided "com.android.support:recyclerview-v7:26.0.1"*/
     implementation "com.android.support:appcompat-v7:${androidSupportLibVersion}"
     implementation "com.android.support:recyclerview-v7:${androidSupportLibVersion}"
 }

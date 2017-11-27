@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_praise_dialog"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingLeft="@dimen/aboutItemPadding"
+        android:paddingRight="@dimen/aboutItemPadding"
+        android:paddingTop="@dimen/aboutItemPadding"
+        android:text="@string/choose_channel"
+        android:textColor="@color/col_d9000000"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/tvPraiseMi"
+        style="@style/AboutActionStyle"
+        android:text="@string/mi_store"/>
+
+    <View
+        android:id="@+id/viewSeparator"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="@dimen/aboutItemPadding"
+        android:layout_marginRight="@dimen/aboutItemPadding"
+        android:background="@color/col_cccccc"/>
+
+    <TextView
+        android:id="@+id/tvPraiseBd"
+        style="@style/AboutActionStyle"
+        android:text="@string/bd_store"/>
+</LinearLayout>
