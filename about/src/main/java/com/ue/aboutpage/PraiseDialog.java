@@ -57,14 +57,8 @@ public class PraiseDialog extends DialogFragment {
 
         View.OnClickListener clickListener = v -> {
             int viewId = v.getId();
-            if (viewId == R.id.tvPraiseMi) {
-                openBrowser(getContext(), miStoreUrl);
-                return;
-            }
-            if (viewId == R.id.tvPraiseBd) {
-                openBrowser(getContext(), bdStoreUrl);
-                return;
-            }
+            dismissAllowingStateLoss();
+            openBrowser(getContext(), (viewId == R.id.tvPraiseMi ? miStoreUrl : bdStoreUrl));
         };
 
         if (TextUtils.isEmpty(miStoreUrl)) {
