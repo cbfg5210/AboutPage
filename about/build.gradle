@@ -5,11 +5,10 @@ apply plugin: 'com.github.dcendents.android-maven'
 group = 'com.github.cbfg5210'
 
 android {
-    compileSdkVersion androidCompileSdkVersion
-
+    compileSdkVersion buildVersions.targetSdk
     defaultConfig {
-        minSdkVersion androidMinSdkVersion
-        targetSdkVersion androidTargetSdkVersion
+        minSdkVersion buildVersions.minSdk
+        targetSdkVersion buildVersions.targetSdk
         versionCode 8
         versionName "1.2.5"
 
@@ -31,7 +30,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation "com.android.support:appcompat-v7:${androidSupportLibVersion}"
-    implementation "com.android.support:recyclerview-v7:${androidSupportLibVersion}"
+    compileOnly deps.support.app_compat
+    compileOnly deps.support.recyclerview
 }
 

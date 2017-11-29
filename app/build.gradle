@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion androidCompileSdkVersion
+    compileSdkVersion buildVersions.targetSdk
     defaultConfig {
         applicationId "com.ue.aboutpagedemo"
-        minSdkVersion androidMinSdkVersion
-        targetSdkVersion androidTargetSdkVersion
+        minSdkVersion buildVersions.minSdk
+        targetSdkVersion buildVersions.targetSdk
         versionCode 2
         versionName "2.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -35,12 +35,12 @@ repositories {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation "com.android.support:appcompat-v7:${androidSupportLibVersion}"
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation deps.support.app_compat
+    implementation deps.support.recyclerview
+    implementation deps.support.constraintLayout
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    implementation "com.android.support:recyclerview-v7:${androidSupportLibVersion}"
 
     /*移除重复的库
     implementation(project(':about')) {
